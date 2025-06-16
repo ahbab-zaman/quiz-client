@@ -30,7 +30,7 @@ const QuizUploader = () => {
 
     try {
       const response = await axios.post(
-        `https://digitalize-server.vercel.app/api/quiz/upload`,
+        `https://pdf-quiz-server.onrender.com/api/quiz/upload`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
