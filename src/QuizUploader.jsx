@@ -1,8 +1,8 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
 import toast, { Toaster } from "react-hot-toast";
-
+import logo from "../public/pdf.png";
 const SkeletonCard = () => (
   <div className="border p-4 rounded shadow animate-pulse space-y-4 bg-white">
     <div className="h-64 bg-gray-300 rounded" />
@@ -30,7 +30,7 @@ const QuizUploader = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/quiz/upload`,
+        `https://digitalize-server.vercel.app/api/quiz/upload`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
@@ -58,9 +58,10 @@ const QuizUploader = () => {
     <div className="min-h-screen py-10 px-4">
       <Toaster position="top-center" reverseOrder={false} />
       <div className="max-w-5xl mx-auto space-y-6">
-        <h2 className="text-3xl font-bold text-center">
-          Upload PDF to Generate Quiz
-        </h2>
+        <div className="flex justify-center items-center gap-2">
+          <img className="w-8" src={logo} alt="PDF Logo" />
+          <h2 className="text-3xl font-bold text-center">PDF Generator</h2>
+        </div>
 
         <div className="flex flex-col sm:flex-row items-center gap-4 bg-white p-4 rounded shadow max-w-2xl mx-auto">
           <input
