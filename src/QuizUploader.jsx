@@ -2,7 +2,7 @@ import { useState, useRef } from "react";
 import axios from "axios";
 import { motion } from "framer-motion";
 import toast, { Toaster } from "react-hot-toast";
-import logo from "../public/pdf.png";
+import logo from "/pdf.png";
 const SkeletonCard = () => (
   <div className="border p-4 rounded shadow animate-pulse space-y-4 bg-white">
     <div className="h-64 bg-gray-300 rounded" />
