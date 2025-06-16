@@ -30,7 +30,7 @@ const QuizUploader = () => {
 
     try {
       const response = await axios.post(
-        `https://pdf-quiz-server.onrender.com/api/quiz/upload`,
+        `https://pdf-quiz-server.onrender.com/quiz/upload`,
         formData,
         { headers: { "Content-Type": "multipart/form-data" } }
       );
